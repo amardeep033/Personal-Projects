@@ -1,0 +1,53 @@
+services:
+  db:
+    image: postgres:16
+    container_name: payments-db
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: test
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./db/init:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U myuser -d test"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  jaeger:
+    image: jaegertracing/all-in-one:1.55
+    container_name: jaeger
+    ports:
+      - "16686:16686"
+      - "4317:4317"
+
+  webhook-listener:
+    image: mendhak/http-https-echo
+    container_name: webhook-listener
+
+  app:
+    build: .
+    container_name: transaction-service
+    depends_on:
+      db:
+        condition: service_healthy
+      jaeger:
+        condition: service_started
+    ports:
+      - "8080:8080"
+    environment:
+      DATABASE_URL: postgres://myuser:mypassword@db:5432/test
+      SERVER_HOST: 0.0.0.0
+      SERVER_PORT: 8080
+      LOG_LEVEL: info
+      SERVICE_NAME: transaction-service
+      OTEL_EXPORTER_OTLP_ENDPOINT: http://jaeger:4317
+      WEBHOOK_BATCH_SIZE: 20
+      WEBHOOK_MAX_RETRIES: 5
+      WEBHOOK_PROCESSING_TIMEOUT_SECS: 120
+      RUST_BACKTRACE: full 
+      RUST_LOG: debug       
+
+volumes:
+  pgdata:

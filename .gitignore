@@ -1,0 +1,17 @@
+insta-place-master/Backend/node_modules/
+insta-place-master/Backend/uploads/images/*
+!insta-place-master/Backend/uploads/images/.gitkeep
+
+insta-place-master/Frontend/node_modules/
+insta-place-master/Frontend/build/
+insta-place-master/Frontend/coverage/
+
+transaction-service-main/target/
+transaction-service-main/.sqlx/
+
+*.log
+.DS_Store
+
+.env
+.env.*
+!.env.example
