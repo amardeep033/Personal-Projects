@@ -1,13 +1,13 @@
-insta-place-master/Backend/node_modules/
-insta-place-master/Backend/uploads/images/*
-!insta-place-master/Backend/uploads/images/.gitkeep
+insta-place/Backend/node_modules/
+insta-place/Backend/uploads/images/*
+!insta-place/Backend/uploads/images/.gitkeep
 
-insta-place-master/Frontend/node_modules/
-insta-place-master/Frontend/build/
-insta-place-master/Frontend/coverage/
+insta-place/Frontend/node_modules/
+insta-place/Frontend/build/
+insta-place/Frontend/coverage/
 
-transaction-service-main/target/
-transaction-service-main/.sqlx/
+transaction-service/target/
+transaction-service/.sqlx/
 
 *.log
 .DS_Store
