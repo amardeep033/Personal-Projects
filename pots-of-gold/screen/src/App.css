@@ -1,0 +1,165 @@
+* {
+  font-family: 'Varela Round';
+  font-size: 25px;
+  font-weight: bolder;
+  color: white;
+}
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:3px;
+  margin:3px;
+  background-color: black;
+  flex-direction: column;
+}
+
+.App{
+  border:4px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:3px;
+  margin:3px;
+  background-color: black;
+  text-align: center;
+  flex-direction: column;
+}
+
+.Header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:3px;
+  margin:3px;
+  background-color: black;
+  flex-direction: column;
+}
+
+.game-options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:3px;
+  margin:3px;
+  background-color: black;
+  flex-direction: column;
+}
+
+.option-group {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: black;
+  flex-direction: row;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  margin-right: 15px; 
+  margin-bottom: 10px; 
+}
+
+.radio-label input[type="radio"] {
+  margin-right: 10px;
+}
+
+.game-board {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:3px;
+  margin:3px;
+  background-color: black;
+  flex-direction: column;
+}
+
+.pot-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:3px;
+  margin:3px;
+  background-color: black;
+  flex-direction: column;
+}
+
+.pot-group{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:3px;
+  margin:3px;
+  background-color: black;
+}
+
+.pot-button{
+  border:4px solid green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:3px;
+  margin:3px;
+  background-color: black;
+}
+
+button {
+  padding: 10px;
+  margin: 5px;
+  font-size: 30px;
+  background-color: black;
+  border: 2px solid white;
+}
+
+button.e {
+  background-color: blue;
+}
+
+button.i {
+  background-color: black;
+}
+
+button.p {
+  background-color: green;
+}
+
+button.c {
+  background-color: red;
+}
+
+.error {
+  color: red;
+}
+
+.game-over {
+  margin-bottom: 20px;
+}
+
+.pot-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+.pot-button.disabled {
+  background-color: #eee;
+  cursor: not-allowed;
+}
+
+.pot-button.player {
+  background-color: #aaf;
+}
+
+.pot-button.computer {
+  background-color: #faa;
+}
+
+.Header p {
+  text-decoration: underline;
+}
